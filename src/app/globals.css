@@ -1,0 +1,42 @@
+:root {
+  --background: #131722;
+  --plus: #22ab94;
+  --minus: #f23645;
+  --inner: #d1d4dc;
+  --link: #2962ff;
+  --link__hover: #1e53e5;
+  --label: #868993;
+  --market-status__dot: #ff9800;
+
+  --modal-background: #1e222d;
+  --button-default: #2a2e39;
+  --button-default-hover: #363a45;
+  --button-primary-text: #fff;
+}
+
+html {
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: #fff;
+    --inner: #131722;
+    --label: #6a6d78;
+
+    --modal-background: #fff;
+    --button-default: #f0f3fa;
+    --button-default-hover: #e0e3eb;
+  }
+
+  html {
+    color-scheme: light;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
