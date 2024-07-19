@@ -40,3 +40,14 @@ html {
   margin: 0;
   scroll-behavior: smooth;
 }
+
+body {
+  min-height: 100vh;
+  font-family: "Be Vietnam Pro", sans-serif;
+  background-color: var(--background);
+  color: var(--inner);
+  display: flex;
+  padding-top: 3vw;
+  padding-bottom: 3vw;
+  justify-content: center;
+}
