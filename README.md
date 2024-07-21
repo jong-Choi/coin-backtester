@@ -186,3 +186,6 @@ html {
 
 
 
+### 구글 아이콘 사용하기
+
+https://dev.to/sabbirsobhani/google-icons-from-google-fonts-with-nextjs-11pa

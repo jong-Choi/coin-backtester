@@ -1,19 +1,17 @@
 import React from "react";
-import taps from "./Taps";
-import Link from "next/link";
 import styles from "./Header.module.scss";
+import Logo from "./logo/Logo";
+import Tabs from "./tabs/Tabs";
+import MobileTabs from "./mobile-tabs/MobileTabs";
+import tabList from "./tabList";
 
 const Header = () => {
   return (
-    <div className={styles["app-header-navigation"]}>
-      {taps.map((tap) => {
-        return (
-          <Link key={tap.name} href={tap.url}>
-            {tap.name}
-          </Link>
-        );
-      })}
-    </div>
+    <header className={styles["app-header"]}>
+      <Logo />
+      <Tabs tabs={tabList} />
+      <MobileTabs tabs={tabList} />
+    </header>
   );
 };
 

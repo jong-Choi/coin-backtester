@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+.app-header-mobile {
+  display: none;
+  @media (max-width: 1200px) {
+    display: flex;
+    flex-flow: row;
+  }
+}
+
+.tabs {
+  position:fixed;
+  transform: translate(-62px, 48px);
+  z-index: 2;
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  color: var(--c-text-tertiary);
+  background-color: var(--c-gray-800);
+  border-bottom: 1px solid var(--c-gray-600);
+  padding : 0rem 1rem;
+  border: 1px solid var(--c-gray-600);
+  border-top: none;
+
+}
+
+.icon-button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 0;
+  background-color: transparent;
+  border: 1px solid var(--c-gray-500);
+  color: var(--c-text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.25s ease;
+  flex-shrink: 0;
+  &.large {
+    width: 42px;
+    height: 42px;
+    font-size: 1.25em;
+  }
+
+  i {
+    transition: 0.25s ease;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: var(--c-gray-600);
+    box-shadow: 0 0 0 4px var(--c-gray-800), 0 0 0 5px var(--c-text-tertiary);
+  }
+}
+

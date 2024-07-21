@@ -1,0 +1,14 @@
+.tab {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  text-decoration: none;
+  border-top: 2px solid transparent;
+  display: inline-flex;
+  transition: 0.25s ease;
+  &.active,
+  &:hover,
+  &:focus {
+    color: var(--c-text-primary);
+    border-color: var(--c-text-primary);
+  }
+}

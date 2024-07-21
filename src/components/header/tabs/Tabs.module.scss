@@ -1,0 +1,13 @@
+.app-header-navigation {
+  @media (max-width: 1200px) {
+    display: none;
+  }
+}
+
+.tabs {
+  display: flex;
+  justify-content: flex-start;
+  gap: 2vw;
+  color: var(--c-text-tertiary);
+  border-bottom: 1px solid var(--c-gray-600);
+}
