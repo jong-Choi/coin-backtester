@@ -14,7 +14,8 @@
 
 .tabs {
   position:fixed;
-  transform: translate(-62px, 48px);
+  width: 150px;
+  transform: translate(-75%, 48px);
   z-index: 2;
   display: flex;
   flex-flow: column;
