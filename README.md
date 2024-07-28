@@ -189,3 +189,94 @@ html {
 ### 구글 아이콘 사용하기
 
 https://dev.to/sabbirsobhani/google-icons-from-google-fonts-with-nextjs-11pa
+
+
+
+### 업비트 API 사용하기
+[업비트 개발자 문서](https://docs.upbit.com/reference/%EB%B6%84minute-%EC%BA%94%EB%93%A4-1)를 참고하면 코인의 시세를 조회할 수 있다.
+
+```js
+const options = { method: "GET", headers: { accept: "application/json" } };
+
+fetch(
+  "https://api.upbit.com/v1/candles/minutes/1?market=KRW-BTC&to=2018-04-19T00:15:00&count=1",
+  options
+)
+  .then((response) => response.json())
+  .then((response) => console.log(response))
+  .catch((err) => console.error(err));
+```
+
+```
+[
+  {
+    market: 'KRW-BTC',
+    candle_date_time_utc: '2018-04-19T00:14:00',
+    candle_date_time_kst: '2018-04-19T09:14:00',
+    opening_price: 8660000,
+    high_price: 8660000,
+    low_price: 8640000,
+    trade_price: 8658000,
+    timestamp: 1524096905143,
+    candle_acc_trade_price: 341767760.5428,
+    candle_acc_trade_volume: 39.48272797,
+    unit: 1
+  }
+]
+```
+
+#### 요청
+
+https://api.upbit.com/v1/candles/minutes/{unit} 
+
+파라미터는 unit이며 몇 분 단위의 봉을 볼 지이다.
+
+쿼리스트링의 Params는 3개이다.
+
+market : 마켓코드이다.
+```
+주요 마켓코드
+비트코인 : KRW-BTC
+리플 : KRW-XRP
+솔라나 : KRW-SOL
+이더리움 : KRW-ETH
+도지코인 : KRW-DOGE
+```
+
+to? : 마지막 캔들 시각이다. ISO8061 포맷 (yyyy-MM-dd'T'HH:mm:ss'Z' or yyyy-MM-dd HH:mm:ss)으로 주고 받으며, UTC가 기준이다. 없을 시 최신 캔들을 요청한다.
+
+count : 캔들의 갯수이다. 최대 200개이다.
+
+
+#### 응답
+
+```
+[
+  {
+    market: 'KRW-BTC',
+    candle_date_time_utc: '2018-04-19T00:14:00',
+    candle_date_time_kst: '2018-04-19T09:14:00',
+    opening_price: 8660000,
+    high_price: 8660000,
+    low_price: 8640000,
+    trade_price: 8658000,
+    timestamp: 1524096905143,
+    candle_acc_trade_price: 341767760.5428,
+    candle_acc_trade_volume: 39.48272797,
+    unit: 1
+  }
+]
+```
+opening_price : 시작가
+trade_price : 종가
+high_price : 고가
+low_price : 저가
+timestamp : 캔들의 마지막 틱의 시간
+candle_acc_trade_price : 누적 거래금액
+candle_acc_trade_volume : 누적 거래량
+unit : 단위 (n 분)
+
+
+
+
+
