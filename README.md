@@ -354,3 +354,15 @@ export default async function PriceList({
 
 
 
+### 캔들스틱 차트 만들기
+https://medium.com/@annairxyz/candlestick-chart-using-d3-a7f978578cd7
+https://codesandbox.io/s/react-d3-candlestick-chart-h0fs0?file=/src/styles.css
+위 글들의 차트와 코드를 활용하였다.
+
+D3는 Data-driven document의 약자로, 데이터를 기반으로 차트를 벡터 렌더링하는 기술이다.
+
+차트를 만들어주는 다양한 라이브러리들이 있으나, 본 프로젝트에서 요구하는 사양은 유려한 디자인보다 캔들스틱 위에 패턴을 그려내는 것이 중요하다.
+
+위쪽 글을 먼저 참조하였고,
+아래쪽의 코드가 리액트에서의 활용도 잘 되고, 심플하여 아래쪽 코드를 사용하였다.
+

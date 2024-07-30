@@ -1,3 +1,4 @@
+import CandleChart from "@/components/candle-chart/CandleChart";
 import {
   isTTradeMapKey,
   IUpbitPrice,
@@ -45,7 +46,12 @@ export default async function PriceList({
     return <div>유효하지 않은 종목명 : {trade}</div>;
   }
 
-  const prices = await getPrices(trade);
+  const data = await getPrices(trade);
 
-  return <div>{JSON.stringify(prices)}</div>;
+  return (
+    <div>
+      {JSON.stringify(data)}
+      <CandleChart data={data} />
+    </div>
+  );
 }
