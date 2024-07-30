@@ -1,15 +1,22 @@
 import React from "react";
 import classNames from "classnames";
+import { IUpbitPrice } from "@/types/upbit";
 
-const Candle = (props) => {
+interface IProps {
+  data: IUpbitPrice;
+  x: number;
+  candle_width: number;
+  pixelFor: (dollar: number) => number;
+}
+const Candle = (props: IProps) => {
   const { data, x, candle_width, pixelFor } = props;
 
-  const up = data.close > data.open;
-  const bar_top = pixelFor(up ? data.close : data.open);
-  const bar_bottom = pixelFor(up ? data.open : data.close);
+  const up = data.trade_price > data.opening_price;
+  const bar_top = pixelFor(up ? data.trade_price : data.opening_price);
+  const bar_bottom = pixelFor(up ? data.opening_price : data.trade_price);
   const bar_height = bar_bottom - bar_top;
-  const wick_top = pixelFor(data.high);
-  const wick_bottom = pixelFor(data.low);
+  const wick_top = pixelFor(data.high_price);
+  const wick_bottom = pixelFor(data.low_price);
 
   return (
     <>

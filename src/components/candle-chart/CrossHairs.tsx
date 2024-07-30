@@ -1,7 +1,21 @@
 import React from "react";
 import classNames from "classnames";
 
-const CrossHairs = (props) => {
+interface IChartDims {
+  pixel_width: number;
+  pixel_height: number;
+  dollar_high: number;
+  dollar_low: number;
+  dollar_delta: number;
+}
+
+interface IProps {
+  x: number;
+  y: number;
+  chart_dims: IChartDims;
+}
+
+const CrossHairs = (props: IProps) => {
   const { x, y, chart_dims } = props;
 
   if (x + y === 0) {
